@@ -20,7 +20,7 @@ interface IProps {
 	onPress?: () => void;
 }
 
-export default function GameCard({ game, onPress }: IProps) {
+const GameCard = ({ game, onPress }: IProps) => {
 	return (
 		<TouchableOpacityStyled key={game.id} onPress={onPress}>
 			<ViewHourStyled>
@@ -63,4 +63,6 @@ export default function GameCard({ game, onPress }: IProps) {
 			</ViewStatuStyled>
 		</TouchableOpacityStyled>
 	);
-}
+};
+
+export default GameCard;

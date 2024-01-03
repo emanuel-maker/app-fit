@@ -21,7 +21,7 @@ import {
 	ViewStyled,
 } from "./styles";
 
-export default function GameScreen({ navigation }: any) {
+const GameScreen = ({ navigation }: any) => {
 	const insets = useSafeAreaInsets();
 
 	const [games, setGames] = React.useState<IGame[]>([]);
@@ -93,4 +93,6 @@ export default function GameScreen({ navigation }: any) {
 			</ViewGamesStyled>
 		</ViewStyled>
 	);
-}
+};
+
+export default GameScreen;

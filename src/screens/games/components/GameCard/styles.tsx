@@ -1,9 +1,12 @@
 import { Text, View, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
-type IColorStatus = Record<string, {
+type IColorStatus = Record<
+	string,
+	{
 		backgroundColor: string;
-	}>;
+	}
+>;
 
 export const colorStatus: IColorStatus = {
 	lleno: {

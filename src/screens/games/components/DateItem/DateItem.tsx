@@ -6,11 +6,13 @@ interface IProps {
 	handlePress: (id: number) => void;
 }
 
-export default function DateItem({ dateItem, handlePress }: IProps) {
+const DateItem = ({ dateItem, handlePress }: IProps) => {
 	return (
 		<TouchableOpacityStyled
 			key={dateItem.id}
-			onPress={() => { handlePress(dateItem.id); }}
+			onPress={() => {
+				handlePress(dateItem.id);
+			}}
 			isSelected={dateItem.isSelected}
 		>
 			<TextStyled isSelected={dateItem.isSelected}>
@@ -19,4 +21,6 @@ export default function DateItem({ dateItem, handlePress }: IProps) {
 			<TextStyled isSelected={dateItem.isSelected}>{dateItem.day}</TextStyled>
 		</TouchableOpacityStyled>
 	);
-}
+};
+
+export default DateItem;
