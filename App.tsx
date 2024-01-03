@@ -1,18 +1,76 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, AntDesign, FontAwesome5 } from "@expo/vector-icons";
-import HomeScreen from "./src/screens/games/Games";
+import GameScreen from "./src/screens/games/Games";
 import Profile from "./src/screens/profile";
 import { QueryClient, QueryClientProvider } from "react-query";
+import "react-native-gesture-handler";
+import { createStackNavigator } from "@react-navigation/stack";
+import { ThemeProvider } from "styled-components/native";
+import theme from "./theme";
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+const Game = ({ route }: any) => {
+  const { id } = route.params;
+  return (
+    <SafeAreaView>
+      <Text>content: {id}</Text>
+    </SafeAreaView>
+  );
+};
+
+const CustomHeader = ({ navigation, route }: any) => {
+  const { id } = route.params;
+  return (
+    <SafeAreaView style={{ flexDirection: "row", alignItems: "center" }}>
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <AntDesign name="left" size={24} color="black" />
+        <Text>header: {id}</Text>
+      </TouchableOpacity>
+    </SafeAreaView>
+  );
+};
+
+const StackGames = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Juegos"
+        component={GameScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Game"
+        component={Game}
+        options={{
+          headerShown: true,
+          header: (props) => <CustomHeader {...props} />,
+        }}
+      />
+    </Stack.Navigator>
+  );
+};
 
 const Menu = () => {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
+      <Tab.Navigator
+        screenOptions={{
+          tabBarStyle: {
+            backgroundColor: "black",
+            borderBlockStartColor: "black",
+          },
+          tabBarItemStyle: {
+            backgroundColor: "black",
+          },
+          tabBarActiveTintColor: "#BEEA00",
+        }}
+      >
         <Tab.Screen
           options={{
             headerShown: false,
@@ -24,20 +82,9 @@ const Menu = () => {
               />
             ),
             tabBarLabel: "Partidos",
-            tabBarBadgeStyle: {
-              backgroundColor: "#BEEA00",
-            },
-            tabBarStyle: {
-              backgroundColor: "black",
-            },
-            tabBarInactiveTintColor: "white",
-            tabBarActiveTintColor: "#BEEA00",
-            headerStyle: {
-              backgroundColor: "black",
-            },
           }}
           name="Fútbol en Barcelona"
-          component={HomeScreen}
+          component={StackGames}
         />
         <Tab.Screen
           options={{
@@ -49,11 +96,7 @@ const Menu = () => {
                 color={payload.focused ? "#BEEA00" : "white"}
               />
             ),
-            tabBarStyle: {
-              backgroundColor: "black",
-            },
-            tabBarInactiveTintColor: "white",
-            tabBarActiveTintColor: "white",
+            tabBarLabel: "Eventos",
           }}
           name="Eventos"
           component={Profile}
@@ -68,11 +111,7 @@ const Menu = () => {
                 color={payload.focused ? "#BEEA00" : "white"}
               />
             ),
-            tabBarStyle: {
-              backgroundColor: "black",
-            },
-            tabBarInactiveTintColor: "white",
-            tabBarActiveTintColor: "white",
+            tabBarLabel: "Chat",
           }}
           name="Chat"
           component={Profile}
@@ -87,11 +126,7 @@ const Menu = () => {
                 color={payload.focused ? "#BEEA00" : "white"}
               />
             ),
-            tabBarStyle: {
-              backgroundColor: "black",
-            },
-            tabBarInactiveTintColor: "white",
-            tabBarActiveTintColor: "white",
+            tabBarLabel: "Perfil",
           }}
           name="Perfil"
           component={Profile}
@@ -106,16 +141,18 @@ const islogged = false;
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60 * 3, // after 3 minutes
+      staleTime: 1000 * 60 * 3, // cache after 3 minutes
     },
   },
 });
 
 export default function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <Menu />
-    </QueryClientProvider>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>
+        <Menu />
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
 

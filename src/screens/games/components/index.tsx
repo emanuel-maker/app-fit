@@ -1,6 +1,6 @@
-import DateItem from "./DateItem";
-import ImageAdvertising from "./ImageAdvertising";
-import GameCard from "./GameCard";
-import TittleApp from "./TittleApp";
+import DateItem from "./DateItem/DateItem";
+import GameCard from "./GameCard/GameCard";
+import TittleApp from "./Tittle/TittleApp";
+import SimpleFilter from "./SimpleFilter/SimpleFilter";
 
-export { DateItem, ImageAdvertising, GameCard, TittleApp };
+export { DateItem, GameCard, TittleApp, SimpleFilter };

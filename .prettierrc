@@ -1,0 +1,6 @@
+{
+    "useTabs": true,
+    "semiColons": true,
+    "singleQuote": false,
+    "arrowParens": "avoid"
+}
