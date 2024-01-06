@@ -5,7 +5,7 @@ import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
 import GameScreen from "@screens/Games/Games";
 import Profile from "@screens/Profile/Profile";
-import { GameDetail } from "@screens/GameDetail/GameDetail";
+import GameDetail from "@screens/GameDetail";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();

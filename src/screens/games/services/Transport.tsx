@@ -12,6 +12,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "11:30h",
 			status: "Disponible",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "ksc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -20,6 +22,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "12:30h",
 			status: "Lleno",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "omgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -28,6 +32,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "11:30h",
 			status: "Encurso",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "xxlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -36,6 +42,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "mmlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -44,6 +52,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "aaalgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -52,6 +62,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "lqqlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -60,6 +72,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "xmxlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -68,6 +82,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "xdalgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -76,6 +92,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "pqlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -84,6 +102,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "lqlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -92,6 +112,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "qlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -100,6 +122,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "plalgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -108,6 +132,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "xdlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -116,6 +142,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "pqoxalgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -124,6 +152,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "slgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -132,6 +162,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "clgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -140,6 +172,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "kjlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -148,6 +182,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "tlgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -156,6 +192,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "flgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -164,6 +202,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 		{
 			id: "mitaalgc16dac-6f44-4446-ac28-a43cd9ba682a",
@@ -172,6 +212,8 @@ const getMatchesByDate = async (date: DateItem): Promise<IGame[]> => {
 			hour: "9:30h",
 			status: "Cancelado",
 			description: "Fútbol Campo",
+			totalPlayers: 14,
+			totalPlayersJoined: 8,
 		},
 	];
 

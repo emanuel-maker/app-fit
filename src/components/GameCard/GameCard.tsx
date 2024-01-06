@@ -8,10 +8,11 @@ import {
 	ViewDetailStyled,
 	ViewHourStyled,
 	ViewStatuStyled,
+	ViewSubsStyled,
 	ViewTypeStyled,
 } from "./styles";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 
 interface IProps {
 	game: IGame;
@@ -29,24 +30,22 @@ const GameCard = ({ game, onPress }: IProps) => {
 					{game.title}
 				</TextDescriptionStyled>
 				<ViewDetailStyled>
-					<View style={{ flexDirection: "row", alignItems: "center" }}>
+					<ViewTypeStyled>
 						<Ionicons name="md-people-circle-outline" size={14} color="white" />
-						<Text
-							style={{
-								color: "white",
-							}}
-						>
+						<TextDescriptionStyled fontSize={14}>
 							{game.type}
-						</Text>
-					</View>
+						</TextDescriptionStyled>
+					</ViewTypeStyled>
 
-					<ViewTypeStyled
+					<ViewSubsStyled
 						style={{
 							borderRadius: 10,
 						}}
 					>
-						<Text style={{ color: "white" }}>Subs 11 / 14</Text>
-					</ViewTypeStyled>
+						<Text style={{ color: "white" }}>
+							Subs {game.totalPlayersJoined} / {game.totalPlayers}
+						</Text>
+					</ViewSubsStyled>
 				</ViewDetailStyled>
 			</ViewDescriptionStyled>
 

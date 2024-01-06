@@ -29,4 +29,5 @@ export const TextStyled = styled(Text)<{ isSelected: boolean }>`
 		return isSelected ? colors.black : colors.white;
 	}};
 	font-weight: bold;
+	font-family: ${props => props.theme.fonts.regular};
 `;

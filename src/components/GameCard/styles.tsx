@@ -1,28 +1,6 @@
 import { Text, View, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 
-type IColorStatus = Record<
-	string,
-	{
-		backgroundColor: string;
-	}
->;
-
-export const colorStatus: IColorStatus = {
-	lleno: {
-		backgroundColor: "#FF5C5C",
-	},
-	disponible: {
-		backgroundColor: "#BEEA00",
-	},
-	encurso: {
-		backgroundColor: "#FFD700",
-	},
-	cancelado: {
-		backgroundColor: "#E3E3E3",
-	},
-};
-
 export const TouchableOpacityStyled = styled(TouchableOpacity)`
 	flex-direction: row;
 	padding: 10px;
@@ -33,7 +11,8 @@ export const TouchableOpacityStyled = styled(TouchableOpacity)`
 `;
 
 export const TextHourStyled = styled(Text)`
-	color: white;
+	color: ${props => props.theme.colors.white};
+	font-family: ${props => props.theme.fonts.regular};
 `;
 
 export const ViewHourStyled = styled(View)`
@@ -54,12 +33,18 @@ export const ViewDetailStyled = styled(View)`
 	gap: 6px;
 `;
 
-export const TextDescriptionStyled = styled(Text)<{ fontSize: number }>`
-	color: white;
+export const TextDescriptionStyled = styled(Text)<{ fontSize?: number }>`
+	color: ${props => props.theme.colors.white};
 	font-size: ${props => props.fontSize}px;
+	font-family: ${props => props.theme.fonts.regular};
 `;
 
 export const ViewTypeStyled = styled(View)`
+	flex-direction: row;
+	align-items: center;
+`;
+
+export const ViewSubsStyled = styled(View)`
 	border-radius: 10px;
 `;
 
@@ -72,11 +57,12 @@ export const ViewStatuStyled = styled(View)<{ status: string }>`
 
 export const TextStatusStyled = styled(Text)<{ status: string }>`
 	text-align: center;
-	color: white;
+	color: ${props => props.theme.colors.white};
 	font-size: 15px;
 	padding: 5px;
-	border-color: ${props => colorStatus[props.status].backgroundColor};
+	border-color: ${props => props.theme.game.status.colors[props.status]};
 	border-radius: 10px;
 	border-width: 1px;
 	margin-right: 8px;
+	font-family: ${props => props.theme.fonts.regular};
 `;

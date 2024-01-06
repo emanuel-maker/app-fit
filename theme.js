@@ -15,6 +15,16 @@ export const theme = {
       lg: 30,
       md: 20,
       sm: 12,
+    },
+    game:{
+      status: {
+        colors:{
+          lleno: '#FF5C5C',
+          disponible: '#BEEA00',
+          encurso: '#FFD700',
+          cancelado: '#E3E3E3',
+        }
+      }
     }
 }
 

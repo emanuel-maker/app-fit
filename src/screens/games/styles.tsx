@@ -31,4 +31,5 @@ export const TextDateStyled = styled(Text)`
 	font-size: 18px;
 	margin-top: 10px;
 	color: ${props => props.theme.colors.white};
+	font-family: ${props => props.theme.fonts.regular};
 `;

@@ -1,6 +1,6 @@
 import { TextStyled, ViewStyled } from "./styles";
 
-const TittleApp = () => {
+const Tittle = () => {
 	return (
 		<ViewStyled>
 			<TextStyled fontWeight="bold" fontSize={30}>
@@ -13,4 +13,4 @@ const TittleApp = () => {
 	);
 };
 
-export default TittleApp;
+export default Tittle;

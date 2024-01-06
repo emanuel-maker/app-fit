@@ -276,4 +276,4 @@ const GameDetail = ({ route, navigation }: any) => {
 	);
 };
 
-export { GameDetail };
+export default GameDetail;

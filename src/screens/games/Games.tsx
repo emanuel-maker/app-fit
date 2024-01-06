@@ -1,5 +1,5 @@
 import React from "react";
-import { FlatList, View } from "react-native";
+import { View } from "react-native";
 
 import {
 	MaterialIcons,
@@ -9,7 +9,7 @@ import {
 } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useDateItems } from "./hooks";
-import { TittleApp, DateItem, SimpleFilter } from "./components";
+import { Tittle, DateItem, SimpleFilter } from "./components";
 import { useQuery } from "react-query";
 import { getMatchesByDate } from "./services/Transport";
 import {
@@ -20,7 +20,7 @@ import {
 	ViewStyled,
 } from "./styles";
 import { StatusBar } from "expo-status-bar";
-import GameCard from "@components/GameCard/GameCard";
+import GameCard from "@components/GameCard";
 
 const GameScreen = ({ navigation }: any) => {
 	const insets = useSafeAreaInsets();
@@ -35,7 +35,7 @@ const GameScreen = ({ navigation }: any) => {
 		<ViewStyled paddinTop={insets.top}>
 			<StatusBar style="light" />
 			{/** Tittle */}
-			<TittleApp />
+			<Tittle />
 
 			{/** Dates */}
 			<FlatListDateStyled
