@@ -4,10 +4,10 @@ const TittleApp = () => {
 	return (
 		<ViewStyled>
 			<TextStyled fontWeight="bold" fontSize={30}>
-				Fútbol
+				Gol Para
 			</TextStyled>
-			<TextStyled fontWeight="normal" fontSize={28}>
-				Mania
+			<TextStyled fontWeight="normal" fontSize={30}>
+				La Gloria
 			</TextStyled>
 		</ViewStyled>
 	);

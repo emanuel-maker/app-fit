@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { FlatList, View } from "react-native";
 
 import {
 	MaterialIcons,
@@ -9,50 +9,51 @@ import {
 } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { useDateItems } from "./hooks";
-import { TittleApp, GameCard, DateItem, SimpleFilter } from "./components";
+import { TittleApp, DateItem, SimpleFilter } from "./components";
 import { useQuery } from "react-query";
 import { getMatchesByDate } from "./services/Transport";
-import type IGame from "@models/GameModel";
 import {
 	TextDateStyled,
-	ViewDateStyled,
+	FlatListDateStyled,
 	ViewFilterStyled,
-	ViewGamesStyled,
+	FlatListGamesStyled,
 	ViewStyled,
 } from "./styles";
+import { StatusBar } from "expo-status-bar";
+import GameCard from "@components/GameCard/GameCard";
 
 const GameScreen = ({ navigation }: any) => {
 	const insets = useSafeAreaInsets();
+	const { dateItems, dateIdSelected, handlePress } = useDateItems();
 
-	const [games, setGames] = React.useState<IGame[]>([]);
-
-	const { dateItems, dateSelected, handlePress } = useDateItems();
 	const { data } = useQuery(
-		["matchesByDate", dateSelected],
-		async () => await getMatchesByDate(dateItems[dateSelected]),
+		["matchesByDate", dateIdSelected],
+		async () => await getMatchesByDate(dateItems[dateIdSelected]),
 	);
-
-	React.useEffect(() => {
-		setGames(data ?? []);
-	}, [data]);
 
 	return (
 		<ViewStyled paddinTop={insets.top}>
+			<StatusBar style="light" />
 			{/** Tittle */}
 			<TittleApp />
 
 			{/** Dates */}
-			<ViewDateStyled horizontal={true} showsHorizontalScrollIndicator={false}>
-				{dateItems.map(dateItem => (
+			<FlatListDateStyled
+				showsHorizontalScrollIndicator={false}
+				horizontal={true}
+				data={dateItems}
+				keyExtractor={item => item.id.toString()}
+				renderItem={({ item }) => (
 					<DateItem
-						key={dateItem.id}
-						dateItem={dateItem}
+						key={item.id}
+						dateIdSelected={dateIdSelected}
+						dateItem={item}
 						handlePress={handlePress}
 					/>
-				))}
-			</ViewDateStyled>
+				)}
+			/>
 
-			{/** Filters */}
+			{/** TODO: Refactor to flatlist and encapsule filters */}
 			<ViewFilterStyled
 				horizontal={true}
 				showsHorizontalScrollIndicator={false}
@@ -75,22 +76,23 @@ const GameScreen = ({ navigation }: any) => {
 			</ViewFilterStyled>
 
 			{/** Games */}
-			<ViewGamesStyled>
-				<View>
-					<TextDateStyled>Hoy, Vie 30 Diciembre 2023</TextDateStyled>
-					{games.map(game => {
-						return (
-							<GameCard
-								game={game}
-								key={game.id}
-								onPress={() => {
-									navigation.navigate("Game", { id: game.id });
-								}}
-							/>
-						);
-					})}
-				</View>
-			</ViewGamesStyled>
+			<View>
+				<TextDateStyled>Hoy, Vie 30 Diciembre 2023</TextDateStyled>
+			</View>
+			<FlatListGamesStyled
+				data={data}
+				showsVerticalScrollIndicator={false}
+				keyExtractor={game => game.id}
+				renderItem={({ item }) => (
+					<GameCard
+						game={item}
+						key={item.id}
+						onPress={() => {
+							navigation.navigate("Game", { id: item.id });
+						}}
+					/>
+				)}
+			/>
 		</ViewStyled>
 	);
 };

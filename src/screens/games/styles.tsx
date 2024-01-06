@@ -1,5 +1,5 @@
 import styled from "styled-components/native";
-import { ScrollView, Text, View } from "react-native";
+import { FlatList, ScrollView, Text, View } from "react-native";
 
 export const ViewStyled = styled(View)<{ paddinTop: number }>`
 	padding-left: 10px;
@@ -9,10 +9,10 @@ export const ViewStyled = styled(View)<{ paddinTop: number }>`
 	padding-top: ${props => props.paddinTop}px;
 `;
 
-export const ViewDateStyled = styled(ScrollView)`
+export const FlatListDateStyled = styled(FlatList)`
 	flex-direction: row;
 	height: 90px;
-`;
+` as typeof FlatList;
 
 export const ViewFilterStyled = styled(ScrollView)`
 	display: flex;
@@ -20,11 +20,11 @@ export const ViewFilterStyled = styled(ScrollView)`
 	margin-bottom: 10px;
 `;
 
-export const ViewGamesStyled = styled(ScrollView)`
+export const FlatListGamesStyled = styled(FlatList)`
 	height: 83%;
 	width: 100%;
 	flex-direction: column;
-`;
+` as typeof FlatList;
 
 export const TextDateStyled = styled(Text)`
 	padding-left: 4px;

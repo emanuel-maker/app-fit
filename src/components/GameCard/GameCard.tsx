@@ -9,9 +9,7 @@ import {
 	ViewHourStyled,
 	ViewStatuStyled,
 	ViewTypeStyled,
-	colorStatus,
 } from "./styles";
-
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { Text, View } from "react-native";
 

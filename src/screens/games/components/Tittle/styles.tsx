@@ -17,4 +17,5 @@ export const TextStyled = styled(Text)<{
 	color: white;
 	font-weight: ${props => props.fontWeight};
 	font-size: ${props => props.fontSize}px;
+	font-family: ${props => props.theme.fonts.regular};
 `;

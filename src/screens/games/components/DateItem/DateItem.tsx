@@ -3,22 +3,22 @@ import { TextStyled, TouchableOpacityStyled } from "./styles";
 
 interface IProps {
 	dateItem: IDateItem;
+	dateIdSelected: number;
 	handlePress: (id: number) => void;
 }
 
-const DateItem = ({ dateItem, handlePress }: IProps) => {
+const DateItem = ({ dateItem, dateIdSelected, handlePress }: IProps) => {
+	const isSelected = dateItem.id === dateIdSelected;
 	return (
 		<TouchableOpacityStyled
 			key={dateItem.id}
 			onPress={() => {
 				handlePress(dateItem.id);
 			}}
-			isSelected={dateItem.isSelected}
+			isSelected={isSelected}
 		>
-			<TextStyled isSelected={dateItem.isSelected}>
-				{dateItem.dayWeek}
-			</TextStyled>
-			<TextStyled isSelected={dateItem.isSelected}>{dateItem.day}</TextStyled>
+			<TextStyled isSelected={isSelected}>{dateItem.dayWeek}</TextStyled>
+			<TextStyled isSelected={isSelected}>{dateItem.day}</TextStyled>
 		</TouchableOpacityStyled>
 	);
 };
