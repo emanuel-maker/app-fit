@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
-import GameScreen from "@screens/Games/Games";
+import Games from "@screens/Games/Games";
 import Profile from "@screens/Profile/Profile";
 import GameDetail from "@screens/GameDetail";
 
@@ -15,7 +15,7 @@ const StackGames = () => {
 		<Stack.Navigator>
 			<Stack.Screen
 				name="Juegos"
-				component={GameScreen}
+				component={Games}
 				options={{
 					headerShown: false,
 				}}
@@ -74,21 +74,6 @@ const Menu = () => {
 						tabBarLabel: "Eventos",
 					}}
 					name="Eventos"
-					component={Profile}
-				/>
-				<Tab.Screen
-					options={{
-						headerShown: false,
-						tabBarIcon: payload => (
-							<Ionicons
-								name="chatbox-outline"
-								size={24}
-								color={payload.focused ? "#BEEA00" : "white"}
-							/>
-						),
-						tabBarLabel: "Chat",
-					}}
-					name="Chat"
 					component={Profile}
 				/>
 				<Tab.Screen

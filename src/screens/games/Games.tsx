@@ -21,8 +21,9 @@ import {
 } from "./styles";
 import { StatusBar } from "expo-status-bar";
 import GameCard from "@components/GameCard";
+import type IGame from "@models/GameModel";
 
-const GameScreen = ({ navigation }: any) => {
+const Games = ({ navigation }: any) => {
 	const insets = useSafeAreaInsets();
 	const { dateItems, dateIdSelected, handlePress } = useDateItems();
 
@@ -46,7 +47,7 @@ const GameScreen = ({ navigation }: any) => {
 				renderItem={({ item }) => (
 					<DateItem
 						key={item.id}
-						dateIdSelected={dateIdSelected}
+						isClicked={dateIdSelected === item.id}
 						dateItem={item}
 						handlePress={handlePress}
 					/>
@@ -97,4 +98,4 @@ const GameScreen = ({ navigation }: any) => {
 	);
 };
 
-export default GameScreen;
+export default Games;

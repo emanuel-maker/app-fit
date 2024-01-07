@@ -1,26 +1,26 @@
+import React, { useEffect } from "react";
 import type IDateItem from "../../models/DateItemModel";
 import { TextStyled, TouchableOpacityStyled } from "./styles";
 
 interface IProps {
 	dateItem: IDateItem;
-	dateIdSelected: number;
+	isClicked: boolean;
 	handlePress: (id: number) => void;
 }
 
-const DateItem = ({ dateItem, dateIdSelected, handlePress }: IProps) => {
-	const isSelected = dateItem.id === dateIdSelected;
+const DateItem = ({ dateItem, isClicked, handlePress }: IProps) => {
 	return (
 		<TouchableOpacityStyled
 			key={dateItem.id}
 			onPress={() => {
 				handlePress(dateItem.id);
 			}}
-			isSelected={isSelected}
+			isSelected={isClicked}
 		>
-			<TextStyled isSelected={isSelected}>{dateItem.dayWeek}</TextStyled>
-			<TextStyled isSelected={isSelected}>{dateItem.day}</TextStyled>
+			<TextStyled isSelected={isClicked}>{dateItem.dayWeek}</TextStyled>
+			<TextStyled isSelected={isClicked}>{dateItem.day}</TextStyled>
 		</TouchableOpacityStyled>
 	);
 };
 
-export default DateItem;
+export default React.memo(DateItem);

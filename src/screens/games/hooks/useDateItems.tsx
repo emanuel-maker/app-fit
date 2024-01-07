@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import getDayWeek from "../../../utils/getDayWeek";
 import type IDateItem from "../models/DateItemModel";
 
@@ -33,9 +33,9 @@ const useDateItems = () => {
 		}
 	};
 
-	const handlePress = (id: number) => {
+	const handlePress = useCallback((id: number) => {
 		setDateIdSelected(id);
-	};
+	}, []);
 
 	React.useEffect(() => {
 		loadDays();
