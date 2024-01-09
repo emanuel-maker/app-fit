@@ -5,9 +5,9 @@ export const TouchableOpacityStyled = styled(TouchableOpacity)`
 	flex-direction: row;
 	padding: 10px;
 	margin-top: 5px;
-	background-color: ${props => props.theme.colors.secondary};
+	border-color: gray;
 	border-radius: 10px;
-	border-width: 1px;
+	border-bottom-width: 1px;
 `;
 
 export const TextHourStyled = styled(Text)`

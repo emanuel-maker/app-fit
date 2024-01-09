@@ -10,6 +10,8 @@ export const TouchableOpacityStyled = styled(TouchableOpacity)`
 	border-radius: 10px;
 	margin-left: 4px;
 	padding: 5px;
+	border-width: 1px;
+	border-color: gray;
 `;
 
 export const TextStyled = styled(Text)`

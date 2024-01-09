@@ -18,6 +18,8 @@ export const TouchableOpacityStyled = styled(TouchableOpacity)<{
 	border-radius: 10px;
 	padding: 5px;
 	margin-left: 4px;
+	border-width: 1px;
+	border-color: gray;
 `;
 
 export const TextStyled = styled(Text)<{ isSelected: boolean }>`

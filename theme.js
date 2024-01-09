@@ -1,15 +1,15 @@
 export const theme = {
     colors: {
       primary: '#BEEA00',
-      secondary: '#292929',
+      secondary: '#1E1E1E',
       white: '#FFFFFF',
       black: '#000000',
     },
     fonts: {
-      bold: 'BebasBold',
-      light: 'BebasLight',
-      regular: 'BebasRegular',
-      thin: 'BebasThin'
+      bold: 'bold',
+      light: 'light',
+      regular: 'regular',
+      thin: 'thin'
     },
     sizes: {
       lg: 30,

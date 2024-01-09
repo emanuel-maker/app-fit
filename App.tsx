@@ -16,10 +16,10 @@ const queryClient = new QueryClient({
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
-		BebasBold: require("./assets/fonts/Roboto-Bold.ttf"),
-		BebasLight: require("./assets/fonts/Roboto-Light.ttf"),
-		BebasRegular: require("./assets/fonts/Roboto-Regular.ttf"),
-		BebasThin: require("./assets/fonts/Roboto-Thin.ttf"),
+		bold: require("./assets/fonts/Roboto-Bold.ttf"),
+		light: require("./assets/fonts/Roboto-Light.ttf"),
+		regular: require("./assets/fonts/Roboto-Regular.ttf"),
+		thin: require("./assets/fonts/Roboto-Thin.ttf"),
 	});
 
 	return (

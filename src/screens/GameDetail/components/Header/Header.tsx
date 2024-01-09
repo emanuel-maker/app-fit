@@ -16,7 +16,7 @@ const Header = ({ navigation }: any) => {
 	return (
 		<ImageBackgroundReact
 			source={imageGame}
-			style={{ width: "100%", height: 150 }}
+			style={{ width: "100%", height: 180 }}
 		>
 			<LinearGradient
 				style={{
@@ -33,6 +33,8 @@ const Header = ({ navigation }: any) => {
 					style={{
 						flex: 1,
 						paddingTop: insets.top,
+						alignItems: "flex-start",
+						justifyContent: "flex-end",
 					}}
 				>
 					<TouchableOpacity onPress={() => navigation.goBack()}>
@@ -52,7 +54,11 @@ const Header = ({ navigation }: any) => {
 							flex: 2,
 						}}
 					>
-						<Text style={{ color: "white", fontSize: 30 }}>Gran Via</Text>
+						<Text
+							style={{ color: "white", fontSize: 30, fontFamily: "regular" }}
+						>
+							Gran Via
+						</Text>
 						<View
 							style={{
 								flexDirection: "row",
@@ -64,7 +70,11 @@ const Header = ({ navigation }: any) => {
 								size={14}
 								color="white"
 							/>
-							<Text style={{ color: "white", fontSize: 15 }}>7vs7</Text>
+							<Text
+								style={{ color: "white", fontSize: 15, fontFamily: "regular" }}
+							>
+								7vs7
+							</Text>
 						</View>
 					</View>
 
@@ -83,6 +93,7 @@ const Header = ({ navigation }: any) => {
 								padding: 5,
 								borderRadius: 10,
 								borderColor: "#BEEA00",
+								fontFamily: "regular",
 							}}
 						>
 							Disponible

@@ -11,8 +11,6 @@ const GameDetail = ({ route, navigation }: any) => {
 		<View
 			style={{
 				flex: 1,
-				width: "100%",
-				height: "100%",
 				backgroundColor: "black",
 			}}
 		>
@@ -22,13 +20,12 @@ const GameDetail = ({ route, navigation }: any) => {
 
 			{/* TAB NAVIGATION */}
 			<Tab.Navigator
-				style={{ padding: 10 }}
 				screenOptions={{
 					tabBarIndicatorStyle: { backgroundColor: "#BEEA00" },
 					tabBarActiveTintColor: "#BEEA00",
 					tabBarInactiveTintColor: "white",
 					tabBarStyle: { backgroundColor: "black" },
-					tabBarLabelStyle: { fontSize: 15 },
+					tabBarLabelStyle: { fontFamily: "regular" },
 				}}
 			>
 				<Tab.Screen name="Info" component={Info} />
@@ -37,10 +34,10 @@ const GameDetail = ({ route, navigation }: any) => {
 			</Tab.Navigator>
 			<View
 				style={{
-					width: "100%",
 					alignItems: "center",
 					paddingLeft: 40,
 					paddingRight: 40,
+					paddingBottom: 40,
 				}}
 			>
 				<Pressable
@@ -58,7 +55,6 @@ const GameDetail = ({ route, navigation }: any) => {
 						alignItems: "center",
 						justifyContent: "center",
 						flexDirection: "row",
-						width: "100%",
 					}}
 				>
 					<AntDesign name="adduser" size={20} color="black" />
