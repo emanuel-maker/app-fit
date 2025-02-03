@@ -3,12 +3,25 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons, AntDesign, FontAwesome5 } from "@expo/vector-icons";
 import "react-native-gesture-handler";
 import { createStackNavigator } from "@react-navigation/stack";
-import Games from "@screens/Games/Games";
-import Profile from "@screens/Profile/Profile";
-import GameDetail from "@screens/GameDetail";
+//import Games from "@screens/Games/Games";
+//import Profile from "@screens/Profile/Profile";
+import React from "react";
+import { Text, View } from "react-native";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
+
+import Games from "../../screens/games/Games";
+import GameDetail from "@screens/GameDetail";
+
+
+const Page = () => {
+	return (
+		<View>
+			<Text>Menu</Text>
+		</View>
+	)
+}
 
 const StackGames = () => {
 	return (
@@ -74,7 +87,7 @@ const Menu = () => {
 						tabBarLabel: "Eventos",
 					}}
 					name="Eventos"
-					component={Profile}
+					component={Page}
 				/>
 				<Tab.Screen
 					options={{
@@ -89,7 +102,7 @@ const Menu = () => {
 						tabBarLabel: "Perfil",
 					}}
 					name="Perfil"
-					component={Profile}
+					component={Page}
 				/>
 			</Tab.Navigator>
 		</NavigationContainer>

@@ -8,7 +8,6 @@ import {
 	Ionicons,
 } from "@expo/vector-icons";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { useDateItems } from "./hooks";
 import { Tittle, DateItem, SimpleFilter } from "./components";
 import { useQuery } from "react-query";
 import { getMatchesByDate } from "./services/Transport";
@@ -22,6 +21,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import GameCard from "@components/GameCard";
 import type IGame from "@models/GameModel";
+import { useDateItems } from "./hooks";
 
 const Games = ({ navigation }: any) => {
 	const insets = useSafeAreaInsets();

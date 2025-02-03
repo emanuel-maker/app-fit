@@ -2,14 +2,27 @@
   "extends": "expo/tsconfig.base",
   "compilerOptions": {
     "strict": true,
+    "forceConsistentCasingInFileNames": false,
     "baseUrl": "./src/",
     "paths": {
-      "@services/*": ["services/*"],
-      "@components/*": ["components/*"],
-      "@hooks/*": ["hooks/*"],
-      "@models/*": ["models/*"],
-      "@screens/*": ["screens/*"],
-      "@assets/*": ["assets/*"],
+      "@services/*": [
+        "services/*"
+      ],
+      "@components/*": [
+        "components/*"
+      ],
+      "@hooks/*": [
+        "hooks/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@screens/*": [
+        "screens/*"
+      ],
+      "@assets/*": [
+        "assets/*"
+      ],
     }
   },
 }
